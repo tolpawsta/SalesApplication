@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SalesApp.Presenter.Services
 {
-    class FileWatcher : IWatcher
+  public  class FileWatcher : IWatcher
     {
         private string _puthDirectory;
         private FileSystemWatcher _watcher;

@@ -34,6 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -44,17 +45,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Service1.cs">
+    <Compile Include="Interfaces\IWSListener.cs" />
+    <Compile Include="Listener\WSListener.cs" />
+    <Compile Include="MainService.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Service1.Designer.cs">
-      <DependentUpon>Service1.cs</DependentUpon>
+    <Compile Include="MainService.Designer.cs">
+      <DependentUpon>MainService.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SalesApp.Infrastructure\SalesApp.Infrastructure.csproj">
+      <Project>{bfcc4775-3740-4f52-8c15-23e56eacb46f}</Project>
+      <Name>SalesApp.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SalesApp.Presenter\SalesApp.PL.csproj">
+      <Project>{3d5510b2-6b07-40aa-9da7-e5b835c2f5ca}</Project>
+      <Name>SalesApp.PL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
